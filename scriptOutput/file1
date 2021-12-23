@@ -1,0 +1,3 @@
+hostname switch1
+Vlan 100
+name data_vlan

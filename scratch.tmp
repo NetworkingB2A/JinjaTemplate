@@ -1,4 +1,12 @@
-I will need to open and read a CSV file
+This is the base of the program
+
+ask the file name
+
+first open the jinja file
+open the CSV file
+run the template generator
+output scripts to a folder.
+
 
 import csv
 from jinja2 import Template
