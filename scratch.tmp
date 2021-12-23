@@ -1,0 +1,23 @@
+I will need to open and read a CSV file
+
+import csv
+from jinja2 import Template
+file_name = input("What is the name of the file? ")
+
+
+with open(f'templateData/jinjaTemplateFile/{file_name}.j2') as templateFile:
+    template = Template(templateFile.read())
+    with open(f'templateData/csvVarFile/{ file_name }.csv', newline='') as csvfile:
+        spamreader = csv.DictReader(csvfile)
+        for row in spamreader:
+            scriptoutput = template.render(row)
+            scriptOutputLocation = f"scriptOutput/{row['fileName']}"
+            with open(scriptOutputLocation, "w") as scriptName:
+                scriptName.write(scriptoutput)
+
+
+
+
+
+
+

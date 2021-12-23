@@ -1,0 +1,3 @@
+hostname switch2
+Vlan 200
+name wireless_vlan
