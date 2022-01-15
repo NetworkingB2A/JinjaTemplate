@@ -7,21 +7,28 @@ open the CSV file
 run the template generator
 output scripts to a folder.
 
+I can make some changes. dont need need the CSV file or the Jinja template file open for the whole program.
+Although having the csv open and run through the files makes the program work a little easier.
+
+I will need to add a progress counter/just some sort of status updater
 
 import csv
 from jinja2 import Template
+
 file_name = input("What is the name of the file? ")
 
 
 with open(f'templateData/jinjaTemplateFile/{file_name}.j2') as templateFile:
     template = Template(templateFile.read())
-    with open(f'templateData/csvVarFile/{ file_name }.csv', newline='') as csvfile:
-        spamreader = csv.DictReader(csvfile)
-        for row in spamreader:
-            scriptoutput = template.render(row)
-            scriptOutputLocation = f"scriptOutput/{row['fileName']}"
-            with open(scriptOutputLocation, "w") as scriptName:
-                scriptName.write(scriptoutput)
+
+with open(f'templateData/csvVarFile/{ file_name }.csv', newline='') as csvfile:
+    csvDictVar = csv.DictReader(csvfile)
+    print(csvDictVar)
+    for row in csvDictVar:
+        scriptoutput = template.render(row)
+        scriptOutputLocation = f"scriptOutput/{row['fileName']}"
+        with open(scriptOutputLocation, "w") as scriptName:
+            scriptName.write(scriptoutput)
 
 
 
