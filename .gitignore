@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Scripts folder
+scriptOutput/*
+
+# template/data files
+templateData/csvVarFile/*
+templateData/jinjaTemplateFile/*
+
+
+#ignore certain files
+!.gitignore
+!example.*

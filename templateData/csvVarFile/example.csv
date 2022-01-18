@@ -1,0 +1,3 @@
+fileName,hostname,vlanName,vlanNumber
+file1.ios,switch1,data_vlan,100
+file2.ios,switch2,wireless_vlan,200
